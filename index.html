@@ -18,6 +18,46 @@
       padding: 0 50px;
     }
 
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .header-text {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .header-text span {
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .header-btn {
+      background-color: #FFFFFF;
+      color: #00adef;
+      padding: 10px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .container {
+      width: 100%;
+    }
+
     .swiper {
       width: 100%;
       height: 350px;
@@ -56,23 +96,27 @@
 </head>
 <body>
 
-<div class="swiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-01.png" alt="01"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-02.png" alt="02"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-03.png" alt="03"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-04.png" alt="04"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-05.png" alt="05"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-06.png" alt="06"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-07.png" alt="07"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-08.png" alt="08"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-09.png" alt="09"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-10.png" alt="10"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-11.png" alt="11"></div>
-    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-12.png" alt="12"></div>
+<div class="container">
+  <div class="header">
+    <div class="header-text">
+      INFOGRÁFICO ANUÁRIO<br>
+      <span>DADOS 2026</span>
+    </div>
+    <a href="URL_DO_INFOGRAFICO_COMPLETO" target="_blank" class="header-btn">
+      Acessar infográfico completo &#10095;
+    </a>
   </div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-01.png" alt="01"></div>
+      <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-02.png" alt="02"></div>
+      <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-03.png" alt="03"></div>
+      <!-- adicione mais slides aqui -->
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
