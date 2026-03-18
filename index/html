@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel Anuário</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: transparent;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 0 50px;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 350px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 330px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #f5f5f5;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #1f3158;
+      background: rgba(255,255,255,0.85);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-01.png" alt="01"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-02.png" alt="02"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-03.png" alt="03"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-04.png" alt="04"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-05.png" alt="05"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-06.png" alt="06"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-07.png" alt="07"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-08.png" alt="08"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-09.png" alt="09"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-10.png" alt="10"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-11.png" alt="11"></div>
+    <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-12.png" alt="12"></div>
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+</body>
+</html>
