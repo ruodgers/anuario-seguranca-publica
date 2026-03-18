@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrossel Anuário</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 400;
+    }
 
     body {
       background: transparent;
@@ -30,13 +39,14 @@
     .header-text {
       color: #ffffff;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 0.5px;
+      line-height: 1.2;
     }
 
     .header-text span {
       font-size: 14px;
-      font-weight: normal;
+      font-weight: 400;
     }
 
     .header-btn {
@@ -46,12 +56,13 @@
       text-decoration: none;
       border-radius: 6px;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 0.5px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       white-space: nowrap;
+      line-height: 1.2;
     }
 
     .container {
@@ -90,7 +101,7 @@
     .swiper-button-next::after,
     .swiper-button-prev::after {
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -109,10 +120,7 @@
 
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-01.png" alt="01"></div>
-      <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-02.png" alt="02"></div>
-      <div class="swiper-slide"><img src="https://forumseguranca.org.br/wp-content/uploads/2025/07/infografico-atlas-2025-03.png" alt="03"></div>
-      <!-- adicione mais slides aqui -->
+      <!-- seus slides aqui -->
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
