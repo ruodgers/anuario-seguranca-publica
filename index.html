@@ -25,7 +25,8 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      padding: 0 50px;
+      /* Padding lateral reduzido para dar mais espaço ao carrossel em telas menores */
+      padding: 0 20px; 
       font-family: 'Roboto', sans-serif;
     }
 
@@ -33,9 +34,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      margin-bottom: 10px;
+      gap: 15px;
+      margin-bottom: 15px;
       flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px; /* Alinha o cabeçalho com o carrossel */
     }
 
     .header-text {
@@ -57,60 +60,96 @@
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 6px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.5px;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       white-space: nowrap;
       line-height: 1.2;
-      transition: transform 0.2s;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
     .header-btn:hover {
-      transform: scale(1.02);
+      background-color: #f0f0f0;
+    }
+    
+    .header-btn:active {
+      transform: scale(0.98);
     }
 
     .container {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .swiper {
       width: 100%;
-      height: 350px;
+      max-width: 1200px; /* Define uma largura máxima para o carrossel */
+      height: 360px; /* Aumentado ligeiramente para acomodar a sombra */
+      padding-bottom: 10px; /* Espaço para a sombra não ser cortada */
     }
 
     .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
+      /* Garante que o slide tenha uma proporção consistente */
+      overflow: hidden; 
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra no container do slide */
+      background-color: #ffffff; /* Fundo branco para uniformizar imagens transparentes */
     }
 
     .swiper-slide img {
       width: 100%;
-      height: 330px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: transparent;
-      /* Drop-shadow cria sombra no contorno da imagem, ideal para fundos coloridos */
-      filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.15));
+      height: 100%; /* Preenche a altura total do slide (350px) */
+      
+      /* A MUDANÇA CHAVE: Corta a imagem para preencher o container uniformemente */
+      object-fit: cover; 
+      
+      /* Centraliza o corte da imagem */
+      object-position: center; 
+      
+      transition: transform 0.3s ease;
+    }
+    
+    /* Efeito de zoom suave ao passar o mouse (opcional, para interatividade) */
+    .swiper-slide:hover img {
+      transform: scale(1.05);
     }
 
     .swiper-button-next,
     .swiper-button-prev {
       color: #1f3158;
-      background: rgba(255,255,255,0.85);
-      width: 36px;
-      height: 36px;
+      background: rgba(255,255,255,0.9);
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      /* Move os botões ligeiramente para fora do carrossel para não cobrir a imagem */
+      top: 50%;
+      transform: translateY(-50%);
     }
+    
+    .swiper-button-prev { left: -20px; }
+    .swiper-button-next { right: -20px; }
 
     .swiper-button-next::after,
     .swiper-button-prev::after {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
+    }
+    
+    /* Esconde os botões em telas muito pequenas se ficarem sobrepostos */
+    @media (max-width: 768px) {
+      .swiper-button-next, .swiper-button-prev {
+        display: none;
+      }
+      body { padding: 0 10px; }
     }
   </style>
 </head>
@@ -123,18 +162,18 @@
       <span>DADOS 2025</span>
     </div>
     <a href="assets/docs/Infograficos_Anuario_2026.pdf" download="Infograficos_Anuario_2026.pdf" class="header-btn">
-      Acessar infográfico completo <span>&#10095;</span>
+      Baixar infográfico completo <span>&#10095;</span>
     </a>
   </div>
 
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/images/0red_cat.png" alt="Redução Criminalidade"></div>
-      <div class="swiper-slide"><img src="assets/images/1rou_trans_cole.png" alt="Roubo Transporte Coletivo"></div>
-      <div class="swiper-slide"><img src="assets/images/2homicidio.png" alt="Homicídios"></div>
-      <div class="swiper-slide"><img src="assets/images/3feminicidio.png" alt="Feminicídio"></div>
-      <div class="swiper-slide"><img src="assets/images/4apreen_armas.png" alt="Apreensão de Armas"></div>
-      <div class="swiper-slide"><img src="assets/images/5apreen_drogas.png" alt="Apreensão de Drogas"></div>
+      <div class="swiper-slide"><img src="assets/images/0red_cat.png" alt="Dados de Redução Criminalidade"></div>
+      <div class="swiper-slide"><img src="assets/images/1rou_trans_cole.png" alt="Dados de Roubo no Transporte Coletivo"></div>
+      <div class="swiper-slide"><img src="assets/images/2homicidio.png" alt="Dados de Homicídios"></div>
+      <div class="swiper-slide"><img src="assets/images/3feminicidio.png" alt="Dados de Feminicídio"></div>
+      <div class="swiper-slide"><img src="assets/images/4apreen_armas.png" alt="Dados de Apreensão de Armas"></div>
+      <div class="swiper-slide"><img src="assets/images/5apreen_drogas.png" alt="Dados de Apreensão de Drogas"></div>
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -144,29 +183,30 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
-    spaceBetween: 16,
+    /* Espaçamento aumentado para dar mais respiro entre as imagens cortadas */
+    spaceBetween: 20, 
     loop: true,
     autoplay: {
-      delay: 4000,
+      delay: 5000, /* Aumentado para dar mais tempo de leitura */
       disableOnInteraction: false,
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    /* Responsividade: ajusta a quantidade de slides conforme o tamanho da tela */
+    /* Responsividade otimizada para o modo 'cover' */
     breakpoints: {
       320: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
+        slidesPerView: 1.2, /* Mostra um pedaço do próximo para indicar deslize */
+        spaceBetween: 10,
       },
-      768: {
+      640: {
         slidesPerView: 2,
-        slidesPerGroup: 2,
+        spaceBetween: 15,
       },
       1024: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
+        slidesPerView: 3, /* Mantém 3 para desktop, mas agora alinhados */
+        spaceBetween: 20,
       }
     }
   });
