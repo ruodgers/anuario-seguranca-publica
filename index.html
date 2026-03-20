@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrossel Anuário</title>
+  <title>Carrossel Anuário - Segurança Pública AM</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,11 +65,11 @@
       gap: 10px;
       white-space: nowrap;
       line-height: 1.2;
+      transition: transform 0.2s;
     }
 
-    .header-btn span {
-      font-size: 16px;
-      font-weight: 400;
+    .header-btn:hover {
+      transform: scale(1.02);
     }
 
     .container {
@@ -92,7 +92,9 @@
       height: 330px;
       object-fit: contain;
       border-radius: 6px;
-      background: #f5f5f5;
+      background: transparent;
+      /* Drop-shadow cria sombra no contorno da imagem, ideal para fundos coloridos */
+      filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.15));
     }
 
     .swiper-button-next,
@@ -127,12 +129,12 @@
 
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/images/0red_cat.png" alt="01"></div>
-      <div class="swiper-slide"><img src="assets/images/1rou_trans_cole.png" alt="02"></div>
-      <div class="swiper-slide"><img src="assets/images/2homicidio.png" alt="03"></div>
-      <div class="swiper-slide"><img src="assets/images/3feminicidio.png" alt="04"></div>
-      <div class="swiper-slide"><img src="assets/images/4apreen_armas.png" alt="05"></div>
-  <div class="swiper-slide"><img src="assets/images/5apreen_drogas.png" alt="06"></div>
+      <div class="swiper-slide"><img src="assets/images/0red_cat.png" alt="Redução Criminalidade"></div>
+      <div class="swiper-slide"><img src="assets/images/1rou_trans_cole.png" alt="Roubo Transporte Coletivo"></div>
+      <div class="swiper-slide"><img src="assets/images/2homicidio.png" alt="Homicídios"></div>
+      <div class="swiper-slide"><img src="assets/images/3feminicidio.png" alt="Feminicídio"></div>
+      <div class="swiper-slide"><img src="assets/images/4apreen_armas.png" alt="Apreensão de Armas"></div>
+      <div class="swiper-slide"><img src="assets/images/5apreen_drogas.png" alt="Apreensão de Drogas"></div>
     </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -142,8 +144,6 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
-    slidesPerGroup: 3, /* Propriedade adicionada para passar de 3 em 3 */
     spaceBetween: 16,
     loop: true,
     autoplay: {
@@ -154,6 +154,21 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    /* Responsividade: ajusta a quantidade de slides conforme o tamanho da tela */
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      }
+    }
   });
 </script>
 
