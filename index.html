@@ -88,7 +88,7 @@
     .swiper {
       width: 100%;
       max-width: 1200px;
-      height: 360px;
+      height: 360px; /* Altura mantida */
       padding-bottom: 10px;
     }
 
@@ -99,19 +99,22 @@
       overflow: hidden; 
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      background-color: #ffffff;
+      background-color: #ffffff; /* Fundo branco para uniformizar imagens com alturas diferentes */
     }
 
     .swiper-slide img {
       width: 100%;
       height: 100%; 
-      object-fit: cover; 
+      
+      /* MUDANÇA PRINCIPAL AQUI: 'contain' garante que a imagem fique INTEIRA dentro do slide, sem cortes */
+      object-fit: contain; 
+      
       object-position: center; 
       transition: transform 0.3s ease;
     }
     
     .swiper-slide:hover img {
-      transform: scale(1.05);
+      transform: scale(1.05); /* Mantém o efeito de zoom */
     }
 
     .swiper-button-next,
@@ -161,13 +164,13 @@
 
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/images/0red_cat.png" alt="Dados de Redução Criminalidade"></div>
-      <div class="swiper-slide"><img src="assets/images/1rou_trans_cole.png" alt="Dados de Roubo no Transporte Coletivo"></div>
-      <div class="swiper-slide"><img src="assets/images/2homicidio.png" alt="Dados de Homicídios"></div>
-      <div class="swiper-slide"><img src="assets/images/3feminicidio.png" alt="Dados de Feminicídio"></div>
-      <div class="swiper-slide"><img src="assets/images/4apreen_armas.png" alt="Dados de Apreensão de Armas"></div>
-      <div class="swiper-slide"><img src="assets/images/5apreen_drogas.png" alt="Dados de Apreensão de Drogas"></div>
-    </div>
+      <div class="swiper-slide"><img src="assets/images/categorias.png" alt="Dados por Categorias"></div>
+      <div class="swiper-slide"><img src="assets/images/drogas.png" alt="Dados de Drogas"></div>
+      <div class="swiper-slide"><img src="assets/images/feminicidio.png" alt="Dados de Feminicídio"></div>
+      <div class="swiper-slide"><img src="assets/images/homicidios.png" alt="Dados de Homicídios"></div>
+      <div class="swiper-slide"><img src="assets/images/homicidios_2.png" alt="Dados Adicionais de Homicídios"></div>
+      <div class="swiper-slide"><img src="assets/images/patrimonio.png" alt="Dados de Patrimônio"></div>
+      </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
@@ -177,7 +180,7 @@
 <script>
   const swiper = new Swiper('.swiper', {
     spaceBetween: 20, 
-    loop: true,
+    loop: true, /* Mantido para rolagem infinita */
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
@@ -196,7 +199,7 @@
         spaceBetween: 15,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 3, /* Mantido 3 slides por vez em desktop */
         spaceBetween: 20,
       }
     }
