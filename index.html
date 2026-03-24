@@ -25,7 +25,6 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      /* Padding lateral reduzido para dar mais espaço ao carrossel em telas menores */
       padding: 0 20px; 
       font-family: 'Roboto', sans-serif;
     }
@@ -38,7 +37,7 @@
       margin-bottom: 15px;
       flex-wrap: wrap;
       width: 100%;
-      max-width: 1200px; /* Alinha o cabeçalho com o carrossel */
+      max-width: 1200px;
     }
 
     .header-text {
@@ -88,36 +87,29 @@
 
     .swiper {
       width: 100%;
-      max-width: 1200px; /* Define uma largura máxima para o carrossel */
-      height: 360px; /* Aumentado ligeiramente para acomodar a sombra */
-      padding-bottom: 10px; /* Espaço para a sombra não ser cortada */
+      max-width: 1200px;
+      height: 360px;
+      padding-bottom: 10px;
     }
 
     .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
-      /* Garante que o slide tenha uma proporção consistente */
       overflow: hidden; 
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Sombra no container do slide */
-      background-color: #ffffff; /* Fundo branco para uniformizar imagens transparentes */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      background-color: #ffffff;
     }
 
     .swiper-slide img {
       width: 100%;
-      height: 100%; /* Preenche a altura total do slide (350px) */
-      
-      /* A MUDANÇA CHAVE: Corta a imagem para preencher o container uniformemente */
+      height: 100%; 
       object-fit: cover; 
-      
-      /* Centraliza o corte da imagem */
       object-position: center; 
-      
       transition: transform 0.3s ease;
     }
     
-    /* Efeito de zoom suave ao passar o mouse (opcional, para interatividade) */
     .swiper-slide:hover img {
       transform: scale(1.05);
     }
@@ -130,7 +122,6 @@
       height: 40px;
       border-radius: 50%;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      /* Move os botões ligeiramente para fora do carrossel para não cobrir a imagem */
       top: 50%;
       transform: translateY(-50%);
     }
@@ -144,7 +135,6 @@
       font-weight: 700;
     }
     
-    /* Esconde os botões em telas muito pequenas se ficarem sobrepostos */
     @media (max-width: 768px) {
       .swiper-button-next, .swiper-button-prev {
         display: none;
@@ -161,7 +151,10 @@
       INFOGRÁFICO ANUÁRIO<br>
       <span>DADOS 2025</span>
     </div>
-    <a href="assets/docs/Infograficos_Anuario_2026.pdf" download="Infograficos_Anuario_2026.pdf" class="header-btn">
+    <a href="https://github.com/ruodgers/anuario-seguranca-publica/raw/main/assets/docs/Infograficos_Anuario_SegPub_2026.pdf" 
+       target="_blank" 
+       download="Infograficos_Anuario_SegPub_2026.pdf" 
+       class="header-btn">
       Baixar infográfico completo <span>&#10095;</span>
     </a>
   </div>
@@ -183,21 +176,19 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
-    /* Espaçamento aumentado para dar mais respiro entre as imagens cortadas */
     spaceBetween: 20, 
     loop: true,
     autoplay: {
-      delay: 5000, /* Aumentado para dar mais tempo de leitura */
+      delay: 5000,
       disableOnInteraction: false,
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    /* Responsividade otimizada para o modo 'cover' */
     breakpoints: {
       320: {
-        slidesPerView: 1.2, /* Mostra um pedaço do próximo para indicar deslize */
+        slidesPerView: 1.2,
         spaceBetween: 10,
       },
       640: {
@@ -205,7 +196,7 @@
         spaceBetween: 15,
       },
       1024: {
-        slidesPerView: 3, /* Mantém 3 para desktop, mas agora alinhados */
+        slidesPerView: 3,
         spaceBetween: 20,
       }
     }
