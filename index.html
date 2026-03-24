@@ -20,13 +20,22 @@
 
     body {
       background: transparent;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      padding: 0 20px; 
+      padding: 0 60px; 
       font-family: 'Roboto', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
     }
 
     .header {
@@ -34,10 +43,9 @@
       justify-content: space-between;
       align-items: center;
       gap: 15px;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
       flex-wrap: wrap;
       width: 100%;
-      max-width: 1200px;
     }
 
     .header-text {
@@ -61,88 +69,75 @@
       border-radius: 6px;
       font-size: 14px;
       font-weight: 700;
-      letter-spacing: 0.5px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      white-space: nowrap;
-      line-height: 1.2;
-      transition: background-color 0.2s, transform 0.1s;
+      transition: all 0.2s;
     }
 
     .header-btn:hover {
       background-color: #f0f0f0;
     }
-    
-    .header-btn:active {
-      transform: scale(0.98);
-    }
-
-    .container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
 
     .swiper {
       width: 100%;
-      max-width: 1200px;
-      height: 360px; /* Altura mantida */
-      padding-bottom: 10px;
+      height: 400px;
+      padding: 10px 0;
     }
 
     .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden; 
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      background-color: #ffffff; /* Fundo branco para uniformizar imagens com alturas diferentes */
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 25px; 
+      overflow: hidden;
     }
 
     .swiper-slide img {
       width: 100%;
-      height: 100%; 
-      
-      /* MUDANÇA PRINCIPAL AQUI: 'contain' garante que a imagem fique INTEIRA dentro do slide, sem cortes */
+      height: 100%;
       object-fit: contain; 
-      
-      object-position: center; 
+      object-position: center;
       transition: transform 0.3s ease;
-    }
-    
-    .swiper-slide:hover img {
-      transform: scale(1.05); /* Mantém o efeito de zoom */
     }
 
     .swiper-button-next,
     .swiper-button-prev {
       color: #1f3158;
-      background: rgba(255,255,255,0.9);
-      width: 40px;
-      height: 40px;
+      background: #ffffff;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      top: 50%;
-      transform: translateY(-50%);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      top: 60%;
     }
-    
-    .swiper-button-prev { left: -20px; }
-    .swiper-button-next { right: -20px; }
+
+    .swiper-button-prev {
+      left: -55px;
+    }
+
+    .swiper-button-next {
+      right: -55px;
+    }
 
     .swiper-button-next::after,
     .swiper-button-prev::after {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 18px;
     }
-    
+
     @media (max-width: 768px) {
+      body {
+        padding: 0 20px;
+      }
       .swiper-button-next, .swiper-button-prev {
         display: none;
       }
-      body { padding: 0 10px; }
+      .swiper {
+        height: 320px;
+      }
     }
   </style>
 </head>
@@ -164,13 +159,13 @@
 
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/images/categorias.png" alt="Dados por Categorias"></div>
-      <div class="swiper-slide"><img src="assets/images/drogas.png" alt="Dados de Drogas"></div>
-      <div class="swiper-slide"><img src="assets/images/feminicidio.png" alt="Dados de Feminicídio"></div>
-      <div class="swiper-slide"><img src="assets/images/homicidios.png" alt="Dados de Homicídios"></div>
-      <div class="swiper-slide"><img src="assets/images/homicidios_2.png" alt="Dados Adicionais de Homicídios"></div>
-      <div class="swiper-slide"><img src="assets/images/patrimonio.png" alt="Dados de Patrimônio"></div>
-      </div>
+      <div class="swiper-slide"><img src="assets/images/categorias.png" alt="Categorias"></div>
+      <div class="swiper-slide"><img src="assets/images/drogas.png" alt="Drogas"></div>
+      <div class="swiper-slide"><img src="assets/images/feminicidio.png" alt="Feminicídio"></div>
+      <div class="swiper-slide"><img src="assets/images/homicidios.png" alt="Homicídios"></div>
+      <div class="swiper-slide"><img src="assets/images/homicidios_2.png" alt="Homicídios Detalhes"></div>
+      <div class="swiper-slide"><img src="assets/images/patrimonio.png" alt="Patrimônio"></div>
+    </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
@@ -179,11 +174,11 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.swiper', {
-    spaceBetween: 20, 
-    loop: true, /* Mantido para rolagem infinita */
+    spaceBetween: 30,
+    loop: true,
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false,
+      disableOnInteraction: false
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -191,16 +186,16 @@
     },
     breakpoints: {
       320: {
-        slidesPerView: 1.2,
-        spaceBetween: 10,
+        slidesPerView: 1.1,
+        spaceBetween: 15
       },
       640: {
         slidesPerView: 2,
-        spaceBetween: 15,
+        spaceBetween: 20
       },
       1024: {
-        slidesPerView: 3, /* Mantido 3 slides por vez em desktop */
-        spaceBetween: 20,
+        slidesPerView: 3,
+        spaceBetween: 30
       }
     }
   });
