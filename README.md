@@ -15,7 +15,6 @@ Abaixo, a descrição da organização dos diretórios e arquivos na raiz do pro
 * **assets/**: Diretório principal de recursos estáticos.
     * **docs/**: Armazena os documentos oficiais em formato PDF (Relatórios e Infográficos).
     * **images/**: Contém as imagens dos infográficos utilizadas no carrossel.
-    * **maps/**: Destinado a arquivos de cartografia e camadas de análise espacial.
     * **table/**: Reservado para bases de dados brutas e planilhas em formato Excel.
 * **index.html**: Arquivo principal contendo a estrutura da interface, estilização CSS e lógica do carrossel Swiper.js.
 * **README.md**: Documentação técnica do repositório.
