@@ -4,10 +4,10 @@ Este repositório contém a estrutura e o código-fonte do componente de visuali
 
 ## Desenvolvimento
 
-**Responsável:** Roger Almeida
-**Instituição:** Centro Integrado de Estatística de Segurança Pública (CIESP)
-**Organização:** Secretaria de Estado de Segurança Pública do Amazonas (SSP/AM)
-
+* **Responsável:** Roger Almeida
+* **Instituição:** Centro Integrado de Estatística de Segurança Pública (CIESP)
+* **Organização:** Secretaria de Estado de Segurança Pública do Amazonas (SSP/AM)
+  
 ## Estrutura do Projeto
 
 Abaixo, a descrição da organização dos diretórios e arquivos na raiz do projeto conforme a árvore de arquivos:
