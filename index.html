@@ -30,12 +30,12 @@
 
     .container {
       width: 100%;
-      max-width: 1200px; /* Aumentado para dar espaço às setas nas laterais */
+      max-width: 1200px;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
-      padding: 0 60px; /* Margem interna para as setas não sobreporem os slides */
+      padding: 0 60px;
     }
 
     .header {
@@ -54,11 +54,6 @@
       font-weight: 700;
       letter-spacing: 0.5px;
       line-height: 1.2;
-    }
-
-    .header-text span {
-      font-size: 14px;
-      font-weight: 400;
     }
 
     .header-btn {
@@ -83,7 +78,6 @@
       width: 100%;
       height: 340px;
       padding: 10px 0;
-      /* Removido overflow: hidden para as setas externas aparecerem se necessário */
       position: static; 
     }
 
@@ -113,19 +107,13 @@
       height: 44px;
       border-radius: 50%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      top: 60%; /* Alinhado ao centro vertical do carrossel */
+      top: 60%;
       position: absolute;
       z-index: 100;
     }
 
-    /* Posicionamento fixo nas extremidades do padding do container */
-    .swiper-button-prev {
-      left: 5px;
-    }
-
-    .swiper-button-next {
-      right: 5px;
-    }
+    .swiper-button-prev { left: 5px; }
+    .swiper-button-next { right: 5px; }
 
     .swiper-button-next::after,
     .swiper-button-prev::after {
@@ -151,9 +139,8 @@
     <div class="header-text">
       INFOGRÁFICO ANUÁRIO 2026<br>
     </div>
-    <a href="https://github.com/ruodgers/anuario-seguranca-publica/raw/main/assets/docs/Infograficos_Anuario_SegPub_2026.pdf" 
+    <a href="https://office365prodam-my.sharepoint.com/:b:/g/personal/gerencia_estatistica_ssp_am_gov_br/IQC1Yk3I_JNlQ6JaXzaDwBuHAZcJ5ZD4Y4agUy67l5ElVZA?e=csih0u" 
        target="_blank" 
-       download="Infograficos_Anuario_SegPub_2026.pdf" 
        class="header-btn">
       ACESSAR INFOGRÁFICO <span>&#10095;</span>
     </a>
